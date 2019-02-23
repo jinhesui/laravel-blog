@@ -1,14 +1,55 @@
-
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+/* universal */
+
+body {
+  font-family: Helvetica, "Microsoft YaHei", Arial, sans-serif;
+  font-size: 14px;
+}
+
+/* header */
+
+.navbar-static-top {
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.06);
+  margin-bottom: 40px;
+  margin-top: 0px;
+}
+
+/* Sticky footer styles */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #000;
+
+  .container {
+    padding-right: 15px;
+    padding-left: 15px;
+
+    p {
+      margin: 19px 0;
+      color: #c1c1c1;
+
+      a {
+        color: inherit;
+      }
+    }
+  }
 }
