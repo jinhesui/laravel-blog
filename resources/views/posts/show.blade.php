@@ -57,9 +57,8 @@
     {{-- 用户回复列表 --}}
       <div class="post-reply mt-4">
         <div class="reply-body">
-
-          @include('posts._reply_box', ['post' => $post])
           @include('posts._reply_list', ['replies' => $post->replies()->with('user')->get()])
+          @includeWhen(Auth::check(), 'posts._reply_box', ['post' => $post])
         </div>
       </div>
   </div>

@@ -9,13 +9,14 @@ use App\Models\Reply;
 
 class ReplyObserver
 {
-    public function creating(Reply $reply)
+    public function created(Reply $reply)
     {
-        //
+        $reply->post->reply_count = $reply->post->replies->count();
+        $reply->post->save();
     }
 
-    public function updating(Reply $reply)
+    public function creating(Reply $reply)
     {
-        //
+        $reply->content = clean($reply->content, 'user_post_body');
     }
 }
