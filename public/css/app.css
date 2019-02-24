@@ -16605,3 +16605,14 @@ body {
   border-radius: 4px;
 }
 
+/* Post Show Page */
+
+.posts-show-page .article {
+  margin: 0 auto;
+  max-width: 752px;
+}
+
+.posts-show-page .item {
+  margin-right: 18px;
+}
+

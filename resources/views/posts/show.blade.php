@@ -1,63 +1,58 @@
 @extends('layouts.app')
+@section('title', $post->title)
+@section('description', $post->excerpt)
 
 @section('content')
-
-<div class="container">
-  <div class="col-md-10 offset-md-1">
-    <div class="card ">
-      <div class="card-header">
-        <h1>Post / Show #{{ $post->id }}</h1>
-      </div>
-
-      <div class="card-body">
-        <div class="card-block bg-light">
-          <div class="row">
-            <div class="col-md-6">
-              <a class="btn btn-link" href="{{ route('posts.index') }}"><- Back</a>
-            </div>
-            <div class="col-md-6">
-              <a class="btn btn-sm btn-warning float-right mt-1" href="{{ route('posts.edit', $post->id) }}">
-                Edit
-              </a>
-            </div>
-          </div>
-        </div>
-        <br>
-
-        <label>Title</label>
-<p>
-	{{ $post->title }}
-</p> <label>Body</label>
-<p>
-	{{ $post->body }}
-</p> <label>User_id</label>
-<p>
-	{{ $post->user_id }}
-</p> <label>Category_id</label>
-<p>
-	{{ $post->category_id }}
-</p> <label>Reply_count</label>
-<p>
-	{{ $post->reply_count }}
-</p> <label>View_count</label>
-<p>
-	{{ $post->view_count }}
-</p> <label>Last_reply_user_id</label>
-<p>
-	{{ $post->last_reply_user_id }}
-</p> <label>Order</label>
-<p>
-	{{ $post->order }}
-</p> <label>Excerpt</label>
-<p>
-	{{ $post->excerpt }}
-</p> <label>Slug</label>
-<p>
-	{{ $post->slug }}
-</p>
+  <div class="article">
+    <div class="title">
+      <h1 class="text-center mt-3 mb-3">{{ $post->title }}</h1>
+    </div>
+    <div class="post-body mt-4 mb-4">
+      {!! $post->body !!}
+    </div>
+    <div class="operate text-center">
+      <p><span>若有收获，就赏束稻谷吧</span></p>
+      <div><i class="fab fa-pagelines"></i></div>
+      <span class="lark-like-count"><span>133</span> 颗稻谷</span>
+    </div>
+    <div class="article-meta">
+      <div class="text-center">
+        <span class="item">
+          <i class="fab fa-gg" title="作者"></i>
+          <span class="item-text">
+            <span>{{ $post->user->name }}</span>
+          </span>
+        </span>
+        <span class="item">
+          <i class="far fa-clock" title="更新时间"></i>
+          <span class="item-text">
+            <span>{{ $post->updated_at }}</span>
+          </span>
+        </span>
+        <span class="item">
+          <i class="fas fa-book-open" title="阅读数"></i>
+          <span class="item-text">579</span>
+        </span>
+        <i class="far fa-comment-dots" title="评论数"></i>
+        <span class="item-text">3</span>
       </div>
     </div>
+    <hr>
+    <div class="wrapper">
+      <div class="prev float-left">
+        <a href="">
+          <div class="label"><span>上一篇</span></div>
+          <h6>SEE Conf 和 D2 资料下载</h6>
+        </a>
+      </div>
+      <div class="next float-right">
+        <a href="">
+          <div class="label"><span>下一篇</span></div>
+          <h6>2019 SEE Conf 语雀礼品领取办法</h6>
+        </a>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+    <hr>
   </div>
-</div>
-
 @endsection

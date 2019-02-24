@@ -12,10 +12,10 @@
                   <a href="{{ route('categories.show', $post->category_id) }}" target="_blank">{{ $post->category->name }}</a>
                 </p>
               </div>
-              <a class="doc-info with-cover" href="/dianping/dp/zb5pe5" target="_blank">
+              <a class="doc-info with-cover" href="{{ route('posts.show', [$post->id]) }}" target="_blank">
                 <div class="doc-info-summary">
                   <h4 class="doc-title">{{ $post->title }}</h4>
-                  <div class="description">今天跟大家分享我家附近的一家日料店。各种机缘巧合，这家店刚开不久，我就光顾过，应算是六月的早期食客了。</div>
+                  <div class="description">{{ $post->excerpt }}</div>
                   <p class="meta">{{$post->view_count}} 阅读 · {{ $post->reply_count }} 颗稻谷 · {{ $post->created_at }}</p>
                 </div>
                 <div class="cover">
