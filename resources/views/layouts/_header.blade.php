@@ -11,13 +11,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Left Side Of Navbar -->
       <ul class="navbar-nav mr-auto">
-
+        <div class="lark-dropdown dropdown___3qr8n themeGrey___2M8WG">
+          <span class="ant-dropdown-trigger ant-input-affix-wrapper"><span class="ant-input-prefix"><i class="fa fa-search anticon anticon-search" aria-hidden="true"></i></span><input class="ant-input" placeholder="搜索" spellcheck="true" type="text" value=""></span>
+        </div>
       </ul>
 
       <!-- Right Side Of Navbar -->
       <ul class="navbar-nav navbar-right">
         <!-- Authentication Links -->
-        @guest
+        {{-- @guest
           <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">登录</a></li>
           <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">注册</a></li>
         @else
@@ -38,7 +40,7 @@
               </a>
             </div>
           </li>
-        @endguest
+        @endguest --}}
       </ul>
     </div>
   </div>
