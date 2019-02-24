@@ -246,4 +246,23 @@ body {
   .item {
     margin-right: 18px;
   }
+  .media-body {
+    margin-left: 10px;
+  }
+  .media {
+    padding: 16px 0;
+  }
+}
+
+/* 回复列表 */
+
+.post-reply {
+    a {
+        color: #262626;
+    }
+
+    .meta {
+        font-size: .9em;
+        color: #262626;
+    }
 }

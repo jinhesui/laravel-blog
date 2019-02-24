@@ -31,10 +31,10 @@
         </span>
         <span class="item">
           <i class="fas fa-book-open" title="阅读数"></i>
-          <span class="item-text">579</span>
+          <span class="item-text">{{ $post->view_count }}</span>
         </span>
         <i class="far fa-comment-dots" title="评论数"></i>
-        <span class="item-text">3</span>
+        <span class="item-text">{{ $post->reply_count }}</span>
       </div>
     </div>
     <hr>
@@ -54,5 +54,13 @@
       <div style="clear: both;"></div>
     </div>
     <hr>
+    {{-- 用户回复列表 --}}
+      <div class="post-reply mt-4">
+        <div class="reply-body">
+
+          @include('posts._reply_box', ['post' => $post])
+          @include('posts._reply_list', ['replies' => $post->replies()->with('user')->get()])
+        </div>
+      </div>
   </div>
 @endsection

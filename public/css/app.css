@@ -16616,3 +16616,22 @@ body {
   margin-right: 18px;
 }
 
+.posts-show-page .media-body {
+  margin-left: 10px;
+}
+
+.posts-show-page .media {
+  padding: 16px 0;
+}
+
+/* 回复列表 */
+
+.post-reply a {
+  color: #262626;
+}
+
+.post-reply .meta {
+  font-size: 0.9em;
+  color: #262626;
+}
+
