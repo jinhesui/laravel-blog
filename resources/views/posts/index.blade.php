@@ -1,8 +1,12 @@
 @extends('layouts.app')
-@section('title', '文章列表')
+@section('title', isset($category) ? $category->name : '文章列表')
 
 @section('content')
-
+@if (isset($category))
+      <div class="alert alert-info text-center" role="alert">
+        {{ $category->name }} ：{{ $category->description }}
+      </div>
+    @endif
 <div class="row mb-5">
   <div class="col-lg-8 col-md-8">
     <div class="top-docs">

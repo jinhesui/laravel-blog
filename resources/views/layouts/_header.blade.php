@@ -9,11 +9,21 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="lark-dropdown dropdown___3qr8n themeGrey___2M8WG">
+        <span class="ant-dropdown-trigger ant-input-affix-wrapper">
+          <span class="ant-input-prefix">
+            <i class="fa fa-search anticon anticon-search" aria-hidden="true"></i>
+          </span>
+          <input class="ant-input" placeholder="搜索" spellcheck="true" type="text" value="">
+        </span>
+      </div>
       <!-- Left Side Of Navbar -->
       <ul class="navbar-nav mr-auto">
-        <div class="lark-dropdown dropdown___3qr8n themeGrey___2M8WG">
-          <span class="ant-dropdown-trigger ant-input-affix-wrapper"><span class="ant-input-prefix"><i class="fa fa-search anticon anticon-search" aria-hidden="true"></i></span><input class="ant-input" placeholder="搜索" spellcheck="true" type="text" value=""></span>
-        </div>
+        <li class="nav-item {{ active_class(if_route('posts.index')) }}"><a class="nav-link" href="{{ route('posts.index') }}">文章</a></li>
+        <li class="nav-item {{ category_nav_active(1) }}"><a class="nav-link" href="{{ route('categories.show', 1) }}">日志</a></li>
+        <li class="nav-item {{ category_nav_active(2) }}"><a class="nav-link" href="{{ route('categories.show', 2) }}">数学</a></li>
+        <li class="nav-item {{ category_nav_active(3) }}"><a class="nav-link" href="{{ route('categories.show', 3) }}">英语</a></li>
+        <li class="nav-item {{ category_nav_active(4) }}"><a class="nav-link" href="{{ route('categories.show', 4) }}">笔记</a></li>
       </ul>
 
       <!-- Right Side Of Navbar -->

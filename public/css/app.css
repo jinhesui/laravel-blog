@@ -16370,7 +16370,8 @@ body {
 
 .lark-dropdown {
   position: relative;
-  margin-left: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 .lark-dropdown .ant-dropdown-trigger,
@@ -16505,11 +16506,13 @@ body {
 
 /* Topic Index Page */
 
-.posts-index-page .block-explore-title {
+.posts-index-page .block-explore-title,
+.categories-show-page .block-explore-title {
   border-bottom: 1px solid #e8e8e8;
 }
 
-.posts-index-page .block-explore-title > h3 {
+.posts-index-page .block-explore-title > h3,
+.categories-show-page .block-explore-title > h3 {
   display: inline-block;
   padding: 8px 0;
   margin-bottom: -1px;
@@ -16518,13 +16521,15 @@ body {
   line-height: 32px;
 }
 
-.posts-index-page .sidebar {
+.posts-index-page .sidebar,
+.categories-show-page .sidebar {
   display: block;
   box-sizing: border-box;
   width: 33.33333333%;
 }
 
-.posts-index-page .top-docs-item {
+.posts-index-page .top-docs-item,
+.categories-show-page .top-docs-item {
   position: relative;
   padding: 24px 8px;
   margin-left: -8px;
@@ -16532,22 +16537,26 @@ body {
   transition: backgroundColor 0.3s ease-in;
 }
 
-.posts-index-page .top-docs-item .doc-meta {
+.posts-index-page .top-docs-item .doc-meta,
+.categories-show-page .top-docs-item .doc-meta {
   display: flex;
   margin-bottom: 16px;
   line-height: 20px;
   color: #8c8c8c;
 }
 
-.posts-index-page .top-docs-item .doc-meta a {
+.posts-index-page .top-docs-item .doc-meta a,
+.categories-show-page .top-docs-item .doc-meta a {
   color: #262626;
 }
 
-.posts-index-page .top-docs-item .doc-meta > p {
+.posts-index-page .top-docs-item .doc-meta > p,
+.categories-show-page .top-docs-item .doc-meta > p {
   margin-left: 12px;
 }
 
-.posts-index-page a {
+.posts-index-page a,
+.categories-show-page a {
   color: #096dd9;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0);
@@ -16557,32 +16566,38 @@ body {
   -webkit-text-decoration-skip: objects;
 }
 
-.posts-index-page .top-docs-item .doc-info {
+.posts-index-page .top-docs-item .doc-info,
+.categories-show-page .top-docs-item .doc-info {
   display: flex;
   color: #595959;
 }
 
-.posts-index-page .top-docs-item .doc-title {
+.posts-index-page .top-docs-item .doc-title,
+.categories-show-page .top-docs-item .doc-title {
   font-size: 14px;
   line-height: 21px;
   text-overflow: ellipsis;
   color: #595959;
 }
 
-.posts-index-page .top-docs-item .doc-info-summary {
+.posts-index-page .top-docs-item .doc-info-summary,
+.categories-show-page .top-docs-item .doc-info-summary {
   flex: auto;
 }
 
-.posts-index-page .top-docs-item .description {
+.posts-index-page .top-docs-item .description,
+.categories-show-page .top-docs-item .description {
   margin-top: 8px;
 }
 
-.posts-index-page .top-docs-item .cover {
+.posts-index-page .top-docs-item .cover,
+.categories-show-page .top-docs-item .cover {
   width: 196px;
   margin-left: 24px;
 }
 
-.posts-index-page .top-docs-item .cover > img {
+.posts-index-page .top-docs-item .cover > img,
+.categories-show-page .top-docs-item .cover > img {
   width: 196px;
   height: 134px;
   -o-object-fit: cover;

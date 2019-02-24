@@ -9,7 +9,7 @@
                 <p>
                   <a href="#" target="_blank">{{ $post->user->name }}</a>
                   <span> 发布于 </span>
-                  <a href="#" target="_blank">{{ $post->category->name }}</a>
+                  <a href="{{ route('categories.show', $post->category_id) }}" target="_blank">{{ $post->category->name }}</a>
                 </p>
               </div>
               <a class="doc-info with-cover" href="/dianping/dp/zb5pe5" target="_blank">
