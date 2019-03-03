@@ -12,7 +12,7 @@ class ReplysTableSeeder extends Seeder
         // 所有用户 ID 数组，如：[1,2,3,4]
         $user_ids = User::all()->pluck('id')->toArray();
 
-        // 所有话题 ID 数组，如：[1,2,3,4]
+        // 所有文章 ID 数组，如：[1,2,3,4]
         $post_ids = Post::all()->pluck('id')->toArray();
 
         // 获取 Faker 实例
@@ -27,7 +27,7 @@ class ReplysTableSeeder extends Seeder
             // 从用户 ID 数组中随机取出一个并赋值
             $reply->user_id = $faker->randomElement($user_ids);
 
-            // 话题 ID，同上
+            // 文章 ID，同上
             $reply->post_id = $faker->randomElement($post_ids);
         });
 

@@ -1,6 +1,6 @@
 <?php
 
-Route::get('/', 'PagesController@root')->name('root');
+Route::get('/', 'PostsController@index')->name('root');
 
 // 用户身份验证相关的路由
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -25,4 +25,4 @@ Route::get('email/resend', 'Auth\VerificationController@resend')->name('verifica
 Route::resource('posts', 'PostsController', ['only' => ['index', 'show', 'create', 'store', 'update', 'edit', 'destroy']]);
 Route::resource('categories', 'CategoriesController', ['only' => ['show']]);
 
-Route::resource('replies', 'RepliesController', ['only' => ['store', 'destroy']]);
+Route::resource('replies', 'RepliesController', ['only' => ['store']]);

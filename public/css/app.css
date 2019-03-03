@@ -16507,12 +16507,14 @@ body {
 /* Topic Index Page */
 
 .posts-index-page .block-explore-title,
-.categories-show-page .block-explore-title {
+.categories-show-page .block-explore-title,
+.root-page .block-explore-title {
   border-bottom: 1px solid #e8e8e8;
 }
 
 .posts-index-page .block-explore-title > h3,
-.categories-show-page .block-explore-title > h3 {
+.categories-show-page .block-explore-title > h3,
+.root-page .block-explore-title > h3 {
   display: inline-block;
   padding: 8px 0;
   margin-bottom: -1px;
@@ -16522,14 +16524,16 @@ body {
 }
 
 .posts-index-page .sidebar,
-.categories-show-page .sidebar {
+.categories-show-page .sidebar,
+.root-page .sidebar {
   display: block;
   box-sizing: border-box;
   width: 33.33333333%;
 }
 
 .posts-index-page .top-docs-item,
-.categories-show-page .top-docs-item {
+.categories-show-page .top-docs-item,
+.root-page .top-docs-item {
   position: relative;
   padding: 24px 8px;
   margin-left: -8px;
@@ -16538,7 +16542,8 @@ body {
 }
 
 .posts-index-page .top-docs-item .doc-meta,
-.categories-show-page .top-docs-item .doc-meta {
+.categories-show-page .top-docs-item .doc-meta,
+.root-page .top-docs-item .doc-meta {
   display: flex;
   margin-bottom: 16px;
   line-height: 20px;
@@ -16546,17 +16551,20 @@ body {
 }
 
 .posts-index-page .top-docs-item .doc-meta a,
-.categories-show-page .top-docs-item .doc-meta a {
+.categories-show-page .top-docs-item .doc-meta a,
+.root-page .top-docs-item .doc-meta a {
   color: #262626;
 }
 
 .posts-index-page .top-docs-item .doc-meta > p,
-.categories-show-page .top-docs-item .doc-meta > p {
+.categories-show-page .top-docs-item .doc-meta > p,
+.root-page .top-docs-item .doc-meta > p {
   margin-left: 12px;
 }
 
 .posts-index-page a,
-.categories-show-page a {
+.categories-show-page a,
+.root-page a {
   color: #096dd9;
   text-decoration: none;
   background-color: rgba(0, 0, 0, 0);
@@ -16567,13 +16575,15 @@ body {
 }
 
 .posts-index-page .top-docs-item .doc-info,
-.categories-show-page .top-docs-item .doc-info {
+.categories-show-page .top-docs-item .doc-info,
+.root-page .top-docs-item .doc-info {
   display: flex;
   color: #595959;
 }
 
 .posts-index-page .top-docs-item .doc-title,
-.categories-show-page .top-docs-item .doc-title {
+.categories-show-page .top-docs-item .doc-title,
+.root-page .top-docs-item .doc-title {
   font-size: 14px;
   line-height: 21px;
   text-overflow: ellipsis;
@@ -16581,23 +16591,27 @@ body {
 }
 
 .posts-index-page .top-docs-item .doc-info-summary,
-.categories-show-page .top-docs-item .doc-info-summary {
+.categories-show-page .top-docs-item .doc-info-summary,
+.root-page .top-docs-item .doc-info-summary {
   flex: auto;
 }
 
 .posts-index-page .top-docs-item .description,
-.categories-show-page .top-docs-item .description {
+.categories-show-page .top-docs-item .description,
+.root-page .top-docs-item .description {
   margin-top: 8px;
 }
 
 .posts-index-page .top-docs-item .cover,
-.categories-show-page .top-docs-item .cover {
+.categories-show-page .top-docs-item .cover,
+.root-page .top-docs-item .cover {
   width: 196px;
   margin-left: 24px;
 }
 
 .posts-index-page .top-docs-item .cover > img,
-.categories-show-page .top-docs-item .cover > img {
+.categories-show-page .top-docs-item .cover > img,
+.root-page .top-docs-item .cover > img {
   width: 196px;
   height: 134px;
   -o-object-fit: cover;

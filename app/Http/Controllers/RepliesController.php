@@ -24,12 +24,4 @@ class RepliesController extends Controller
 
         return redirect()->route('posts.show', $reply->post->id)->with('success', '评论创建成功！');
     }
-
-	public function destroy(Reply $reply)
-    {
-        $this->authorize('destroy', $reply);
-        $reply->delete();
-
-        return redirect()->route('posts.show', $reply->post->id)->with('success', '评论删除成功！');
-    }
 }

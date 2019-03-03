@@ -34,3 +34,12 @@
 </div>
 
 @endsection
+
+@section('scriptsAfterJs')
+  <script>
+    var filters = {!! json_encode($filters) !!};
+    $(document).ready(function () {
+      $('.search-form input[name=search]').val(filters.search);
+    })
+  </script>
+@endsection

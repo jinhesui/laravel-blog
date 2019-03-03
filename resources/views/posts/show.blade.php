@@ -11,9 +11,8 @@
       {!! $post->body !!}
     </div>
     <div class="operate text-center">
-      <p><span>若有收获，就赏束稻谷吧</span></p>
-      <div><i class="fab fa-pagelines"></i></div>
-      <span class="lark-like-count"><span>133</span> 颗稻谷</span>
+      <p><span>有兴趣，能读懂，且受益</span></p>
+      <div><img alt="{{ $post->user->name }}" src="{{ $post->user->avatar }}" style="width:150px;height:150px;" /></div>
     </div>
     <div class="article-meta">
       <div class="text-center">
@@ -31,7 +30,7 @@
         </span>
         <span class="item">
           <i class="fas fa-book-open" title="阅读数"></i>
-          <span class="item-text">{{ $post->view_count }}</span>
+          <span class="item-text">{{ $post->visits()->count() }}</span>
         </span>
         <i class="far fa-comment-dots" title="评论数"></i>
         <span class="item-text">{{ $post->reply_count }}</span>
@@ -40,16 +39,30 @@
     <hr>
     <div class="wrapper">
       <div class="prev float-left">
-        <a href="">
+        @if ($post->id <= 1)
+          <a href="#">
           <div class="label"><span>上一篇</span></div>
-          <h6>SEE Conf 和 D2 资料下载</h6>
+          <h6>无人能出其左右</h6>
+          </a>
+        @else
+        <a href="{{ route('posts.show', ['post' => $post->id - 1]) }}">
+          <div class="label"><span>上一篇</span></div>
+          <h6>{{ $previous->title }}</h6>
         </a>
+        @endif
       </div>
       <div class="next float-right">
-        <a href="">
+        @if (($post->id + 1) >= $total)
+          <a href="#">
           <div class="label"><span>下一篇</span></div>
-          <h6>2019 SEE Conf 语雀礼品领取办法</h6>
+          <h6>无人能出其左右</h6>
         </a>
+        @else
+        <a href="{{ route('posts.show', ['post' => $post->id + 1]) }}">
+          <div class="label"><span>下一篇</span></div>
+          <h6>{{ $next->title }}</h6>
+        </a>
+        @endif
       </div>
       <div style="clear: both;"></div>
     </div>

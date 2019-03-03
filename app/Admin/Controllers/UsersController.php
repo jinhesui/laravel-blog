@@ -21,6 +21,13 @@ class UsersController extends Controller
             ->body($this->grid());
     }
 
+    public function edit($id, Content $content)
+    {
+        return $content
+            ->header('编辑用户')
+            ->body($this->form()->edit($id));
+    }
+
     protected function grid()
     {
         $grid = new Grid(new User);
@@ -48,7 +55,7 @@ class UsersController extends Controller
             // 不在每一行后面展示删除按钮
             $actions->disableDelete();
             // 不在每一行后面展示编辑按钮
-            $actions->disableEdit();
+            // $actions->disableEdit();
         });
 
         $grid->tools(function ($tools) {
@@ -59,5 +66,15 @@ class UsersController extends Controller
         });
 
         return $grid;
+    }
+
+    protected function form()
+    {
+        $form = new Form(new User);
+
+        $form->text('name', '用户名')->rules('required');
+        $form->image('avatar', '用户头像')->move('uploads/images/avatars');
+
+        return $form;
     }
 }
