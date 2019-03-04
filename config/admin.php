@@ -146,7 +146,7 @@ return [
     |               | sidebar-mini                            |
     |---------------------------------------------------------|
      */
-    'layout' => ['sidebar-mini', 'sidebar-collapse'],
+    'layout' => ['fixed'],
 
     /*
      * 登录页背景图
@@ -182,6 +182,5 @@ return [
      * 扩展设置.
      */
     'extensions' => [
-
-    ],
+    ]
 ];

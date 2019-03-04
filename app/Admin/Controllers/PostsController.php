@@ -67,7 +67,8 @@ class PostsController extends Controller
         $form = new Form(new Post);
 
         $form->text('title', '标题')->rules('required');
-        $form->editor('body', '内容')->rules('required');
+        $form->simditor('body', '内容')->rules('required');
+        $form->text('user_id', '用户ID');
         $form->select('category_id', '分类')->options([1 => '日志', 2 => '数学', 3 => '英语', 4 => '笔记']);
         $form->image('image', '文章封面')->rules('image')->move('uploads/images');
 

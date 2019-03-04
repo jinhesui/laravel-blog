@@ -28,10 +28,11 @@ class PostsController extends Controller
             $builder->where(function ($query) use ($like) {
                 $query->where('title', 'like', $like)
                     ->orWhere('excerpt', 'like', $like)
-                    ->orWhere('body', 'like', $like);
+                    ->orWhere('body', 'like', $like)
+                    ->orderBy('created_at', 'desc');
             });
         }
-		$posts = $builder->with('user', 'category')->paginate(10);
+		$posts = $builder->with('user', 'category')->orderBy('created_at', 'desc')->paginate(10);
         $links = $link->getAllCached();
 		return view('posts.index', [
             'posts' => $posts,
@@ -55,37 +56,4 @@ class PostsController extends Controller
             'total' => $total,
         ]);
     }
-
-	public function create(Post $post)
-	{
-		return view('posts.create_and_edit', compact('post'));
-	}
-
-	public function store(PostRequest $request)
-	{
-		$post = Post::create($request->all());
-		return redirect()->route('posts.show', $post->id)->with('message', 'Created successfully.');
-	}
-
-	public function edit(Post $post)
-	{
-        $this->authorize('update', $post);
-		return view('posts.create_and_edit', compact('post'));
-	}
-
-	public function update(PostRequest $request, Post $post)
-	{
-		$this->authorize('update', $post);
-		$post->update($request->all());
-
-		return redirect()->route('posts.show', $post->id)->with('message', 'Updated successfully.');
-	}
-
-	public function destroy(Post $post)
-	{
-		$this->authorize('destroy', $post);
-		$post->delete();
-
-		return redirect()->route('posts.index')->with('message', 'Deleted successfully.');
-	}
 }

@@ -21,11 +21,11 @@ class CategoriesController extends Controller
             $builder->where(function ($query) use ($like) {
                 $query->where('title', 'like', $like)
                     ->orWhere('excerpt', 'like', $like)
-                    ->orWhere('body', 'like', $like);
+                    ->orWhere('body', 'like', $like)->orderBy('created_at', 'desc');
             });
         }
         // 读取分类 ID 关联的文章，并按每 10 条分页
-        $posts = Post::where('category_id', $category->id)->paginate(10);
+        $posts = Post::where('category_id', $category->id)->with('user', 'category')->orderBy('created_at', 'desc')->paginate(10);
         // 资源链接
         $links = $link->getAllCached();
         // 传参变量话题和分类到模板中
